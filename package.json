@@ -1,0 +1,74 @@
+{
+  "private": true,
+  "scripts": {
+    "postinstall": "install-app-deps",
+    "start": "npm install && npm run compile && electron ./app",
+    "test": "xo && mocha",
+    "compile": "rimraf app/out",
+    "pack": "npm run compile && build --dir",
+    "dist": "npm run compile && build"
+  },
+  "build": {
+    "appId": "xyz.meadowcottage.hackerVue",
+    "productName": "HackerVue",
+    "dmg": {
+      "background": "build/background@2x.png",
+      "contents": [
+        {
+          "x": 410,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 150,
+          "type": "file"
+        }
+      ],
+      "window": {
+        "width": 494,
+        "height": 270
+      }
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false
+    }
+  },
+  "devDependencies": {
+    "electron": "^1.6.2",
+    "electron-builder": "^16.6.1",
+    "mocha": "^3.2.0",
+    "rimraf": "^2.6.1",
+    "spectron": "^3.6.0",
+    "xo": "^0.18.1"
+  },
+  "dependencies": {
+    "electron-config": "^0.2.1",
+    "electron-context-menu": "^0.8.0",
+    "electron-is-dev": "^0.1.2"
+  },
+  "xo": {
+    "envs": [
+      "node",
+      "mocha"
+    ],
+    "esnext": true,
+    "semicolon": false,
+    "space": 4
+  },
+  "packageIgnore": [
+    "LICENSE.md",
+    "LICENSE",
+    "README.md",
+    ".DS_Store",
+    ".travis.yml",
+    "appveyor.yml",
+    "test",
+    "dist",
+    "build/Screenshot.png"
+  ]
+}

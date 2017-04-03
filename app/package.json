@@ -1,0 +1,31 @@
+{
+  "name": "hackervue",
+  "productName": "HackerVue",
+  "version": "1.0.1",
+  "description": "Desktop client for vue-hackernews-2.0",
+  "private": true,
+  "main": "main.js",
+  "author": {
+    "name": "Meadowcottage"
+  },
+  "license": "GNU General Public License",
+  "homepage": "https://github.com/Meadowcottage/HackerVue/",
+  "keywords": [
+    "electron",
+    "Hacker News",
+    "entertainment",
+    "Vue.js"
+  ],
+  "bugs": {
+    "url": "https://github.com/Meadowcottage/HackerVue/issues/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Meadowcottage/HackerVue.git"
+  },
+  "dependencies": {
+    "electron-config": "^0.2.1",
+    "electron-context-menu": "^0.6.0",
+    "electron-is-dev": "^0.1.2"
+  }
+}

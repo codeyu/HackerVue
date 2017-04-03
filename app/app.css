@@ -1,0 +1,15 @@
+.header {
+    z-index: 990!important;
+    border-top: 20px solid #cd5200!important;
+    -webkit-app-region: drag!important;
+}
+
+.news-list-nav {
+    margin-top: 20px!important;
+}
+
+.news-list,
+.user-view,
+.item-view-header {
+    margin-top: 48px!important;
+}
