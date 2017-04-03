@@ -22,6 +22,9 @@ let mainWindow
 // If the application is quitting
 let isQuitting = false
 
+// Gets dark theme bool from config
+const isDarkTheme = appConfig.get('darkTheme')
+
 // Main Window
 function createMainWindow() {
     const lastWindowState = appConfig.get('lastWindowState')
@@ -34,6 +37,7 @@ function createMainWindow() {
         minWidth: 299, // Window minimum width
         minHeight: 328, // Window minimum height
         backgroundColor: '#ff6600', // Background Color
+        darkTheme: isDarkTheme, // Dark theme setting
         titleBarStyle: 'hidden', // Titlebar style (MacOS Only)
         center: true, // Center app window?
         movable: true, // Is window movable?
@@ -73,6 +77,11 @@ app.on('ready', () => {
         // MacOS navbar border
         if (process.platform === 'darwin') {
             appPage.insertCSS(fs.readFileSync(path.join(__dirname, 'app.css'), 'utf8'))
+        }
+
+        // Loading dark theme css
+        if (isDarkTheme === true) {
+            appPage.insertCSS(fs.readFileSync(path.join(__dirname, 'dark-theme.css'), 'utf8'))
         }
 
         // Show the Main Window

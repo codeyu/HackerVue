@@ -1,0 +1,31 @@
+body {
+    background-color: #424242!important;
+}
+
+.header {
+    background-color: #cc5200!important;
+    border-top: 20px solid #b34700!important;
+}
+
+.news-item,
+.user-view,
+.item-view-header,
+.item-view-comments {
+    background-color: #757575!important;
+    border-bottom: 1px solid #424242!important;
+    color: #E0E0E0!important;
+}
+
+.news-list-nav,
+.news-list-nav a {
+    background-color: #616161!important;
+    color: #fff!important;
+}
+
+.news-item a,
+.user-view a,
+.item-view-header a,
+.item-view-comments a,
+.news-list-nav a.disabled {
+    color: #E0E0E0!important;
+}

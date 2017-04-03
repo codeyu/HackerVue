@@ -5,6 +5,7 @@ const app = electron.app
 const appName = app.getName()
 const appVersion = app.getVersion()
 const appMenu = electron.Menu
+const appConfig = require('./config')
 
 // File menu for Windows platform
 const win32Template = [{
@@ -102,6 +103,14 @@ const menuTemplate = [
             label: 'Reload',
             accelerator: 'CommandOrControl+R',
             role: 'reload'
+        }, {
+            type: 'separator'
+        }, {
+            label: 'Toggle Theme',
+            accelerator: 'CommandOrControl+D',
+            click() {
+                appConfig.set('darkTheme', !appConfig.get('darkTheme'))
+            }
         }, {
             type: 'separator'
         }, {
